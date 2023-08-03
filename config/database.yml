@@ -8,8 +8,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   database: Reservation
-  username: root
-  password: test1234
+  username: Your_username
+  password: Your_username
   host: 127.0.0.1
   port: 3306
 
@@ -17,8 +17,8 @@ development:
   adapter: mysql2
   encoding: utf8
   database: Reservation
-  username: root
-  password: test1234
+  username: Your_username
+  password: Your_username
   host: 127.0.0.1
   port: 3306
 
@@ -26,8 +26,13 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
+  adapter: mysql2
+  encoding: utf8
+  database: Reservation_test
+  username: Your_username
+  password: Your_username
+  host: 127.0.0.1
+  port: 3306
 
 production:
   <<: *default

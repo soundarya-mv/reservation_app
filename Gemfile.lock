@@ -219,8 +219,10 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  minitest (~> 5.18, >= 5.18.1)
   mysql2 (~> 0.5.2)
   puma (~> 5.0)
+  rack-test (~> 2.1)
   rails (~> 7.0.5, >= 7.0.5.1)
   selenium-webdriver
   sprockets-rails

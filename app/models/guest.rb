@@ -1,6 +1,6 @@
 class Guest < ApplicationRecord
 
-	validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, on: :create 
+	validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i}, on: :create
 	has_many :reservations, dependent: :destroy, inverse_of: :guest
 	has_many :guest_contact_numbers, dependent: :destroy
 	accepts_nested_attributes_for :guest_contact_numbers
