@@ -12,7 +12,8 @@ Things you may want to cover:
 * Configuration
 
 * Database creation
-	2 Databases:
+
+  	2 Databases:
 
 	Development: Reservation
 
@@ -23,8 +24,10 @@ Things you may want to cover:
 	rails db:migrate RAILS_ENV=test
 
 * Database initialization
-	4 tables:
-		Guests
+
+  	4 tables:
+
+  		Guests
 
   		Reservations
 
@@ -33,7 +36,8 @@ Things you may want to cover:
   		Currencies
 
 	DB entries for currencies table: - Could have been enum in the code. But in Future while we scale to other currencies we can just introduce by adding an entry to the table, without code change
-		INSERT INTO Currencies(currency, created_at, updated_at) VALUES ("AUD", '2023-08-03 15:04:08', '2023-08-03 15:04:08');
+
+  		INSERT INTO Currencies(currency, created_at, updated_at) VALUES ("AUD", '2023-08-03 15:04:08', '2023-08-03 15:04:08');
 
   		INSERT INTO Currencies(currency, created_at, updated_at) VALUES ("INR", '2023-08-03 15:04:08', '2023-08-03 15:04:08');
 
