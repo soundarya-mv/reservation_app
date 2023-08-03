@@ -44,6 +44,7 @@ Things you may want to cover:
 	rails test test/models/reservation_test.rb
 
 * Curl command to hit the post endpoint:
+
 	Payload 1:
 		curl -v -H "Content-Type: application/json" -X POST -d '{"reservation_code": "TEST1","start_date": "2023-07-25", "end_date":"2023-07-27", "nights": 3, "guests": 4,"adults": 2,"children": 2,"infants": 0,"status": "accepted","guest": {"first_name": "Test","last_name": "User1","phone": "12345", "email": "testuser1@test.com"},"currency": "AUD","payout_price": "4200.00","security_price": "500","total_price": "4710.00"}' 'http://127.0.0.1:3000/reservations'
 
