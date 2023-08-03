@@ -2,7 +2,7 @@ class CreateReservations < ActiveRecord::Migration[7.0]
   def change
     create_table "Reservations", force: :cascade do |t|
       t.integer "guest_id"
-      t.string "reservation_code"
+      t.string "code"
       t.datetime "start_date"
       t.datetime "end_date"
       t.integer "adults", default: 0

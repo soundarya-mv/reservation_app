@@ -40,7 +40,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
               }
     post reservations_url params: params
     response_body = JSON.parse(response.body)
-    assert_equal(response_body["reservation"]["reservation_code"], params[:reservation][:code])
+    assert_equal(response_body["reservation"]["code"], params[:reservation][:code])
     assert_equal(response_body["guest"]["email"], params[:reservation][:guest_email])
     assert_equal(response.code, "200")
   end
@@ -85,7 +85,7 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
     create_dummy_currency
     params = {
                 "reservation": {
-                "code": reservation.reservation_code,
+                "code": reservation.code,
                 "start_date": "2021-03-12T00:00:00.000Z",
                 "end_date": "2021-03-12T00:00:00.000Z",
                 "guest_details": {
@@ -110,11 +110,11 @@ class ReservationsControllerTest < ActionDispatch::IntegrationTest
 
   def create_dummy_reservation(params = {})
     guest = Guest.create(first_name: "Test", email: "testuser#{rand(100)}@test.com")
-    reservation = Reservation.create(guest_id: guest.id, reservation_code: "TEST12_#{Time.now()}", start_date: params[:start_date] || Time.now(), end_date: params[:end_date] || Time.now(), status: params[:status] || "accepted", adults: params[:adults], children: params[:children])
+    reservation = Reservation.create(guest_id: guest.id, code: "TEST12_#{Time.now()}", start_date: params[:start_date] || Time.now(), end_date: params[:end_date] || Time.now(), status: params[:status] || "accepted", adults: params[:adults], children: params[:children])
   end
 
   def create_dummy_currency
-    Currency.create(currency: "AUD")
+    Currency.create(name: "AUD")
   end
 
 end

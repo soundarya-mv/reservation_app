@@ -6,6 +6,7 @@ class Guest < ApplicationRecord
 	accepts_nested_attributes_for :guest_contact_numbers
 
 	def self.find_or_create_by_email(params)
+		# When we have a guest already with the given email we return that guest, else we create a new guest
 		return Guest.find_by(email: params[:email]) || Guest.create!(params)
 	end
 
