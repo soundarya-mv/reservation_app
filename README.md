@@ -35,7 +35,11 @@ Things you may want to cover:
 
   		Currencies
 
-	DB entries for currencies table: - Could have been enum in the code. But in Future while we scale to other currencies we can just introduce by adding an entry to the table, without code change
+	Use the below command to populate DB entries for currencies table: - Could have been enum in the code. But in Future while we scale to other currencies we can just introduce by adding an entry to the table, without code change
+
+		rails db:seed
+
+  		In case you run into some issues, use the below as the fallback for data population.
 
   		INSERT INTO Currencies(currency, created_at, updated_at) VALUES ("AUD", '2023-08-03 15:04:08', '2023-08-03 15:04:08');
 
